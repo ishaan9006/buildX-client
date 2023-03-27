@@ -6,6 +6,7 @@ import DocButton from '@/components/docButton/DocButton';
 
 export default function Home() {
   const [ showSideBar, setShowSideBar ] = useState(true);
+  const [ projectTitle, setProjectTitle ] = useState(null);
   return (
     <>
       <Head>
@@ -23,32 +24,38 @@ export default function Home() {
         </div>
 
 
-        {/* <div className='grid grid-cols-8'> */}
-
           <div className='col-span-5'>
-            <div className='flex flex-col'>
-
+            <div className='h-screen flex flex-col justify-around'>
               <div>
-                <h1 className='text-white text-2xl font-bold'>Useful Documentation to read</h1>
-                <p className='text-white text-sm font-semibold'>BuildX integrates smoothly with all of the frameworks you already know</p>
+                {/* Project Title */}
+                <h1>{projectTitle}</h1>
+                
               </div>
 
-              <div className='h-screen flex justify-evenly items-center'>
-                <DocButton title="React" description="Guide to build a simple React app" img="/react-js-icon.svg" tag="https://react.dev/blog/2023/03/16/introducing-react-dev"/>
-                <DocButton title="Next.js" description="BuildX helps you to build with Next.js" img="/next.svg" tag="https://nextjs.org/docs/getting-started"/>
-                <DocButton title="Vue.js" description="Quickstart for Vue.js on BuildX" img="/vue-js-icon.svg" tag="https://vuejs.org/guide/introduction.html"/>
-                <DocButton title="Angular" description="Learn how to use Angular with BuildX" img="/angular-icon.svg" tag="https://angular.io/docs"/>
-              </div>
+              <div className='flex flex-col'>
+                <div className='flex flex-col justify-evenly p-4'>
+                  <h1 className='text-white text-2xl font-bold'>Useful Documentation to read</h1>
+                  <p className='text-white text-sm font-semibold'>BuildX integrates smoothly with all of the frameworks you already know</p>
+                </div>
 
+                <div className='h-full flex justify-evenly items-center'>
+                  <DocButton title="React" description="Guide to build a simple React app" img="/react-js-icon.svg" tag="https://react.dev/blog/2023/03/16/introducing-react-dev"/>
+                  <DocButton title="Next.js" description="BuildX helps you to build with Next.js" img="/next.svg" tag="https://nextjs.org/docs/getting-started"/>
+                  <DocButton title="Vue.js" description="Quickstart for Vue.js on BuildX" img="/vue-js-icon.svg" tag="https://vuejs.org/guide/introduction.html"/>
+                  <DocButton title="Angular" description="Learn how to use Angular with BuildX" img="/angular-icon.svg" tag="https://angular.io/docs"/>
+                </div>
+              </div>
             </div>
-
+              
           </div>
+
+
+
+
 
           <div className="col-span-2">
 
           </div>
-
-        {/* </div> */}
 
 
 
