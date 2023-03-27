@@ -7,7 +7,7 @@ import { FiSettings } from 'react-icons/fi'
 
 function Sidebar() {
   return (
-    <div className=' h-screen min-w-max w-1/6 bg-[#091B18]'>
+    <div className='h-screen min-w-max w-full bg-[#091B18]'>
       <h1 className='flex justify-center items-center p-2 text-white text-2xl font-semibold'>BuildX</h1>
       
       <div className='flex justify-center items-center mt-4'>
