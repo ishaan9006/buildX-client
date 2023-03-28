@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image';
 import Sidebar from '@/components/Sidebar/sidebar';
-import DocButton from '@/components/docButton/DocButton';
+import DocButton from '@/components/DocButton/DocButton';
 import InfoButtons from '@/components/ProjectInfo/InfoButtons';
 
 import { FiCopy } from 'react-icons/fi'
 import { AiFillGithub, AiOutlineCaretDown } from 'react-icons/ai'
+import { RxDotFilled } from 'react-icons/rx'
+
+
 import GithubButton from '@/components/ProjectInfo/GithubButton';
+import ServiceButton from '@/components/Services/ServicesButton';
 
 export default function Home() {
   const [ showSideBar, setShowSideBar ] = useState(true);
@@ -92,9 +96,18 @@ export default function Home() {
               <p className="text-white text-xs mb-5">Github is connected</p>
               <GithubButton title="Ishaan9006/project1" icon={<AiFillGithub size={25}/>} text="Edit"/>
             </div>
+
             <hr className='m-4'/>
+
             <div className='mt-5'>
               <h1 className="text-white text-2xl font-bold">Services</h1>
+
+
+              <div>
+                <ServiceButton icon={<RxDotFilled size={20} color='green'/>} title="Database" process="Running"/>
+                <ServiceButton icon={<RxDotFilled size={20} color='green'/>} title="Authentication" process="Running"/>
+                <ServiceButton icon={<RxDotFilled size={20} color='orange'/>} title="Hosting" process="Pause"/>
+              </div>
             </div>
           </div>
 
