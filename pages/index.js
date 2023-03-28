@@ -16,6 +16,18 @@ import ServiceButton from '@/components/Services/ServicesButton';
 
 export default function Home() {
   const [ projectTitle, setProjectTitle ] = useState("Messenger clone");
+  const [ showDropDownMenu, setDropDownMenu ] = useState(false);
+  const dummyText = [
+    {id: 1, text: 'Project1'},
+    {id: 2, text: 'Project2'},
+    {id: 3, text: 'Project3'},
+    {id: 4, text: 'Project4'},
+    {id: 5, text: 'Project5'},
+    {id: 6, text: 'Project6'},
+    {id: 7, text: 'Project7'},
+    {id: 8, text: 'Project8'},
+  ]
+
   return (
     <>
       <Head>
@@ -35,12 +47,17 @@ export default function Home() {
             <div>
               <div className='flex p-5 items-center'>
                 <h1 className="text-white text-2xl font-semibold">{projectTitle}</h1>
-                <AiOutlineCaretDown size={15} color="white" className="mx-2" />
+                <button onClick={() => setDropDownMenu(!showDropDownMenu)}>
+                  <AiOutlineCaretDown size={15} color="white" className="mx-2" />
+                </button>
               </div>
 
-              <div className='flex flex-col w-3/5 justify-start items-center p-5'>
+              
+                  
+
+              <div className='flex flex-col w-3/5 justify-start items-center p-5 relative z-0'>
                 {/* Project Title */}
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-center items-center relative z-50'>
                   <h1 className="text-white text-2xl font-semibold">{projectTitle}</h1>
                   <div className='h-5 w-20 border-2 rounded-full flex justify-center items-center ml-3'>
                     <p className="text-white text-xs">Base plan</p>
@@ -50,9 +67,9 @@ export default function Home() {
                 <div className='flex w-85 justify-start items-center'>
                   
                     <div className='flex w-40 justify-evenly items-center mt-2'>
-                      <Image src="/android.svg" height="24" width="24"/>
-                      <Image src="/swift.svg" height="20" width="20"/>
-                      <Image src="/web-2.svg" height="24" width="24"/>
+                      <Image src="/android.svg" height="24" width="24" alt="Loading.."/>
+                      <Image src="/swift.svg" height="20" width="20" alt="Loading.."/>
+                      <Image src="/web-2.svg" height="24" width="24" alt="Loading.."/>
                     </div>
                 
                   <div className='h-8 w-25 border-2 rounded-full flex justify-center items-center ml-3 p-1 mt-2'>
@@ -62,6 +79,24 @@ export default function Home() {
 
                 </div>
               </div>
+
+              {
+                    showDropDownMenu && 
+                    <div className="absolute top-16 h-20 w-60 z-s100 p-4 mx-3 bg-white rounded-md overflow-y-scroll">
+                      {
+                        dummyText.map((item) => (
+                          <button key={item.id} 
+                            className='text-lg font-bold
+                             flex'
+                             onClick={() => setProjectTitle(item.text)}
+                            >
+                            
+                            {item.text}
+                          </button>
+                        ))
+                      }
+                    </div>
+              }
             </div>
 
             <div className='flex flex-col h-1/2 mb-5'>
