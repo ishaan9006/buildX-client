@@ -2,7 +2,7 @@ import React from 'react'
 
 function InfoButtons({title, text, icon}) {
     return (
-        <div className="bg-[#0e2d27] flex rounded-xl p-3 m-2 justify-between">
+        <div className="bg-[#0e2d27] flex rounded-xl p-3 m-2 justify-between items-center">
             <div className="flex w-1/2 justify-start text-white font-semibold">
                 {title}
             </div>
