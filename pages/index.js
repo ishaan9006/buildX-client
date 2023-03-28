@@ -15,7 +15,6 @@ import GithubButton from '@/components/ProjectInfo/GithubButton';
 import ServiceButton from '@/components/Services/ServicesButton';
 
 export default function Home() {
-  const [ showSideBar, setShowSideBar ] = useState(true);
   const [ projectTitle, setProjectTitle ] = useState("Messenger clone");
   return (
     <>
@@ -27,106 +26,87 @@ export default function Home() {
       </Head>
       <main className='h-screen w-screen bg-[#0A1F1C] grid grid-cols-8 overflow-hidden'>
         <div className='col-span-1'>
-          {
-            showSideBar &&
-            <Sidebar />
-          }
+          <Sidebar />
+        </div>
+        
+        <div className='col-span-5'>
+          <div className='h-screen flex flex-col justify-between p-2'>
+              
+            <div>
+              <div className='flex p-5 items-center'>
+                <h1 className="text-white text-2xl font-semibold">{projectTitle}</h1>
+                <AiOutlineCaretDown size={15} color="white" className="mx-2" />
+              </div>
+
+              <div className='flex flex-col w-3/5 justify-start items-center p-5'>
+                {/* Project Title */}
+                <div className='flex justify-center items-center'>
+                  <h1 className="text-white text-2xl font-semibold">{projectTitle}</h1>
+                  <div className='h-5 w-20 border-2 rounded-full flex justify-center items-center ml-3'>
+                    <p className="text-white text-xs">Base plan</p>
+                  </div>
+                </div>
+
+                <div className='flex w-85 justify-start items-center'>
+                  
+                    <div className='flex w-40 justify-evenly items-center mt-2'>
+                      <Image src="/android.svg" height="24" width="24"/>
+                      <Image src="/swift.svg" height="20" width="20"/>
+                      <Image src="/web-2.svg" height="24" width="24"/>
+                    </div>
+                
+                  <div className='h-8 w-25 border-2 rounded-full flex justify-center items-center ml-3 p-1 mt-2'>
+                    <RiAddFill color='white'/>
+                    <p className="text-white text-xs mx-1">Change plan</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div className='flex flex-col h-1/2 mb-5'>
+              <div className='flex flex-col justify-evenly p-4'>
+                <h1 className='text-white text-2xl font-bold'>Useful Documentation to read</h1>
+                <p className='text-white text-sm font-semibold'>BuildX integrates smoothly with all of the frameworks you already know</p>
+              </div>
+
+              <div className='h-full flex  items-center'>
+                <DocButton title="Next.js" description="BuildX helps you to build with Next.js" img="/next.svg" tag="https://nextjs.org/docs/getting-started"/>
+                <DocButton title="Vue.js" description="Quickstart for Vue.js on BuildX" img="/vue-js-icon.svg" tag="https://vuejs.org/guide/introduction.html"/>
+                <DocButton title="Angular" description="Learn how to use Angular with BuildX" img="/angular-icon.svg" tag="https://angular.io/docs"/>
+              </div>
+            </div>
+                
+          </div>
         </div>
 
-
-          <div className='col-span-5'>
-            <div className='h-screen flex flex-col justify-between p-2'>
-                
-              <div>
-                <div className='flex p-5 items-center'>
-                  <h1 className="text-white text-2xl font-semibold">{projectTitle}</h1>
-                  <AiOutlineCaretDown size={15} color="white" className="mx-2" />
-                </div>
-
-                <div className='flex flex-col w-3/5 justify-start items-center p-5'>
-                  {/* Project Title */}
-                  <div className='flex justify-center items-center'>
-                    <h1 className="text-white text-2xl font-semibold">{projectTitle}</h1>
-                    <div className='h-5 w-20 border-2 rounded-full flex justify-center items-center ml-3'>
-                      <p className="text-white text-xs">Base plan</p>
-                    </div>
-                  </div>
-
-                  <div className='flex w-85 justify-start items-center'>
-                    
-                      <div className='flex w-40 justify-evenly items-center mt-2'>
-                        <Image src="/android.svg" height="24" width="24"/>
-                        <Image src="/swift.svg" height="20" width="20"/>
-                        <Image src="/web-2.svg" height="24" width="24"/>
-                      </div>
-                  
-                    <div className='h-8 w-25 border-2 rounded-full flex justify-center items-center ml-3 p-1 mt-2'>
-                      <RiAddFill color='white'/>
-                      <p className="text-white text-xs mx-1">Change plan</p>
-                    </div>
-
-                  </div>
-
-                  
-                </div>
-              </div>
-
-
-              <div className='flex flex-col h-1/2 mb-5'>
-                <div className='flex flex-col justify-evenly p-4'>
-                  <h1 className='text-white text-2xl font-bold'>Useful Documentation to read</h1>
-                  <p className='text-white text-sm font-semibold'>BuildX integrates smoothly with all of the frameworks you already know</p>
-                </div>
-
-                <div className='h-full flex  items-center'>
-                  <DocButton title="Next.js" description="BuildX helps you to build with Next.js" img="/next.svg" tag="https://nextjs.org/docs/getting-started"/>
-                  <DocButton title="Vue.js" description="Quickstart for Vue.js on BuildX" img="/vue-js-icon.svg" tag="https://vuejs.org/guide/introduction.html"/>
-                  <DocButton title="Angular" description="Learn how to use Angular with BuildX" img="/angular-icon.svg" tag="https://angular.io/docs"/>
-                </div>
-              </div>
-            </div>
-              
+        <div className="col-span-2 flex flex-col pt-5">
+          <div>
+            <h1 className="text-white text-2xl font-bold mb-5">Project Info</h1>
+            <InfoButtons title="Region" text="India" icon={<FiCopy />}/>
+            <InfoButtons title="Key" text="biuwbfiuewf" icon={<FiCopy />}/>
+          </div>
+          <hr className='m-4'/>
+          <div className='mt-5'> 
+            <h1 className="text-white text-2xl font-bold">Repository</h1>
+            <p className="text-white text-xs mb-5">Github is connected</p>
+            <GithubButton title="Ishaan9006/project1" icon={<AiFillGithub size={25}/>} text="Edit"/>
           </div>
 
+          <hr className='m-4'/>
+
+          <div className='mt-5'>
+            <h1 className="text-white text-2xl font-bold">Services</h1>
 
 
-
-
-          <div className="col-span-2 flex flex-col pt-5">
             <div>
-              <h1 className="text-white text-2xl font-bold mb-5">Project Info</h1>
-              <InfoButtons title="Region" text="India" icon={<FiCopy />}/>
-              <InfoButtons title="Key" text="biuwbfiuewf" icon={<FiCopy />}/>
-            </div>
-            <hr className='m-4'/>
-            <div className='mt-5'> 
-              <h1 className="text-white text-2xl font-bold">Repository</h1>
-              <p className="text-white text-xs mb-5">Github is connected</p>
-              <GithubButton title="Ishaan9006/project1" icon={<AiFillGithub size={25}/>} text="Edit"/>
-            </div>
-
-            <hr className='m-4'/>
-
-            <div className='mt-5'>
-              <h1 className="text-white text-2xl font-bold">Services</h1>
-
-
-              <div>
-                <ServiceButton icon={<RxDotFilled size={20} color='green'/>} title="Database" process="Running"/>
-                <ServiceButton icon={<RxDotFilled size={20} color='green'/>} title="Authentication" process="Running"/>
-                <ServiceButton icon={<RxDotFilled size={20} color='orange'/>} title="Hosting" process="Pause"/>
-              </div>
+              <ServiceButton icon={<RxDotFilled size={20} color='green'/>} title="Database" process="Running"/>
+              <ServiceButton icon={<RxDotFilled size={20} color='green'/>} title="Authentication" process="Running"/>
+              <ServiceButton icon={<RxDotFilled size={20} color='orange'/>} title="Hosting" process="Pause"/>
             </div>
           </div>
-
-
-
-
-
-
-
-
-
+        </div>
+              
       </main>
     </>
   )
