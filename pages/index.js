@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Head from 'next/head'
+import Image from 'next/image';
 import Sidebar from '@/components/Sidebar/sidebar';
 import DocButton from '@/components/docButton/DocButton';
 
 
 export default function Home() {
   const [ showSideBar, setShowSideBar ] = useState(true);
-  const [ projectTitle, setProjectTitle ] = useState(null);
+  const [ projectTitle, setProjectTitle ] = useState("hello");
   return (
     <>
       <Head>
@@ -25,10 +26,17 @@ export default function Home() {
 
 
           <div className='col-span-5'>
-            <div className='h-screen flex flex-col justify-around'>
-              <div>
+            <div className='h-screen flex flex-col justify-around p-2'>
+              <div className='relative flex justify-start items-center'>
+                <Image
+                  src="/img.jpg"
+                  width="660"
+                  height="600"
+                  style={{objectFit: 'cover'}}
+                  className='top-2'
+                />
                 {/* Project Title */}
-                <h1>{projectTitle}</h1>
+                <h1 className="absolute top-0 text-white">{projectTitle}</h1>
                 
               </div>
 
