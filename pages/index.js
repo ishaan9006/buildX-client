@@ -3,7 +3,11 @@ import Head from 'next/head'
 import Image from 'next/image';
 import Sidebar from '@/components/Sidebar/sidebar';
 import DocButton from '@/components/docButton/DocButton';
+import InfoButtons from '@/components/ProjectInfo/InfoButtons';
 
+import { FiCopy } from 'react-icons/fi'
+import { AiFillGithub } from 'react-icons/ai'
+import GithubButton from '@/components/ProjectInfo/GithubButton';
 
 export default function Home() {
   const [ showSideBar, setShowSideBar ] = useState(true);
@@ -27,14 +31,8 @@ export default function Home() {
 
           <div className='col-span-5'>
             <div className='h-screen flex flex-col justify-around p-2'>
-              <div className='relative flex justify-start items-center'>
-                <Image
-                  src="/img.jpg"
-                  width="660"
-                  height="600"
-                  style={{objectFit: 'cover'}}
-                  className='top-2'
-                />
+              <div className=''>
+                
                 {/* Project Title */}
                 <h1 className="absolute top-0 text-white">{projectTitle}</h1>
                 
@@ -46,7 +44,7 @@ export default function Home() {
                   <p className='text-white text-sm font-semibold'>BuildX integrates smoothly with all of the frameworks you already know</p>
                 </div>
 
-                <div className='h-full flex justify-evenly items-center'>
+                <div className='h-full flex  items-center'>
                   <DocButton title="Next.js" description="BuildX helps you to build with Next.js" img="/next.svg" tag="https://nextjs.org/docs/getting-started"/>
                   <DocButton title="Vue.js" description="Quickstart for Vue.js on BuildX" img="/vue-js-icon.svg" tag="https://vuejs.org/guide/introduction.html"/>
                   <DocButton title="Angular" description="Learn how to use Angular with BuildX" img="/angular-icon.svg" tag="https://angular.io/docs"/>
@@ -60,8 +58,22 @@ export default function Home() {
 
 
 
-          <div className="col-span-2">
-
+          <div className="col-span-2 flex flex-col pt-5">
+            <div>
+              <h1 className="text-white text-2xl font-bold mb-5">Project Info</h1>
+              <InfoButtons title="Region" text="India" icon={<FiCopy />}/>
+              <InfoButtons title="Key" text="biuwbfiuewf" icon={<FiCopy />}/>
+            </div>
+            <hr className='m-4'/>
+            <div className='mt-5'> 
+              <h1 className="text-white text-2xl font-bold">Repository</h1>
+              <p className="text-white text-xs mb-5">Github is connected</p>
+              <GithubButton title="Ishaan9006/project1" icon={<AiFillGithub size={25}/>} text="Edit"/>
+            </div>
+            <hr className='m-4'/>
+            <div className='mt-5'>
+              <h1 className="text-white text-2xl font-bold">Usage</h1>
+            </div>
           </div>
 
 
