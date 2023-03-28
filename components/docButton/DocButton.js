@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function DocButton({title, description, img, tag}) {
   return (
-    <div className="h-2/6 w-1/5 bg-[#0e2d27] rounded-2xl p-4 flex flex-col justify-between">
+    <div className="h-full w-1/5 bg-[#0e2d27] rounded-2xl p-4 flex flex-col justify-between mx-3">
         <div className="h-10 w-10 bg-white rounded-full flex justify-center items-center">
             <Image src={img} alt={title} height="30" width="30"/>
         </div>
