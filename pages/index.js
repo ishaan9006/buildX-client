@@ -6,6 +6,7 @@ import DocButton from '@/components/DocButton/DocButton';
 import InfoButtons from '@/components/ProjectInfo/InfoButtons';
 
 import { FiCopy } from 'react-icons/fi'
+import { RiAddFill } from 'react-icons/ri'
 import { AiFillGithub, AiOutlineCaretDown } from 'react-icons/ai'
 import { RxDotFilled } from 'react-icons/rx'
 
@@ -51,12 +52,19 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className='flex w-80 justify-start'>
-                    <div className='flex w-40 justify-evenly items-center mt-2'>
-                      <Image src="/android.svg" height="24" width="24"/>
-                      <Image src="/swift.svg" height="20" width="20"/>
-                      <Image src="/web-2.svg" height="24" width="24"/>
+                  <div className='flex w-85 justify-start items-center'>
+                    
+                      <div className='flex w-40 justify-evenly items-center mt-2'>
+                        <Image src="/android.svg" height="24" width="24"/>
+                        <Image src="/swift.svg" height="20" width="20"/>
+                        <Image src="/web-2.svg" height="24" width="24"/>
+                      </div>
+                  
+                    <div className='h-8 w-25 border-2 rounded-full flex justify-center items-center ml-3 p-1 mt-2'>
+                      <RiAddFill color='white'/>
+                      <p className="text-white text-xs mx-1">Change plan</p>
                     </div>
+
                   </div>
 
                   
