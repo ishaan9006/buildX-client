@@ -6,12 +6,12 @@ import DocButton from '@/components/docButton/DocButton';
 import InfoButtons from '@/components/ProjectInfo/InfoButtons';
 
 import { FiCopy } from 'react-icons/fi'
-import { AiFillGithub } from 'react-icons/ai'
+import { AiFillGithub, AiOutlineCaretDown } from 'react-icons/ai'
 import GithubButton from '@/components/ProjectInfo/GithubButton';
 
 export default function Home() {
   const [ showSideBar, setShowSideBar ] = useState(true);
-  const [ projectTitle, setProjectTitle ] = useState("hello");
+  const [ projectTitle, setProjectTitle ] = useState("Messenger clone");
   return (
     <>
       <Head>
@@ -30,15 +30,37 @@ export default function Home() {
 
 
           <div className='col-span-5'>
-            <div className='h-screen flex flex-col justify-around p-2'>
-              <div className=''>
+            <div className='h-screen flex flex-col justify-between p-2'>
                 
-                {/* Project Title */}
-                <h1 className="absolute top-0 text-white">{projectTitle}</h1>
-                
+              <div>
+                <div className='flex p-5 items-center'>
+                  <h1 className="text-white text-2xl font-semibold">{projectTitle}</h1>
+                  <AiOutlineCaretDown size={15} color="white" className="mx-2" />
+                </div>
+
+                <div className='flex flex-col w-3/5 justify-start items-center p-5'>
+                  {/* Project Title */}
+                  <div className='flex justify-center items-center'>
+                    <h1 className="text-white text-2xl font-semibold">{projectTitle}</h1>
+                    <div className='h-5 w-20 border-2 rounded-full flex justify-center items-center ml-3'>
+                      <p className="text-white text-xs">Base plan</p>
+                    </div>
+                  </div>
+
+                  <div className='flex w-80 justify-start'>
+                    <div className='flex w-40 justify-evenly items-center mt-2'>
+                      <Image src="/android.svg" height="24" width="24"/>
+                      <Image src="/swift.svg" height="20" width="20"/>
+                      <Image src="/web-2.svg" height="24" width="24"/>
+                    </div>
+                  </div>
+
+                  
+                </div>
               </div>
 
-              <div className='flex flex-col'>
+
+              <div className='flex flex-col h-1/2 mb-5'>
                 <div className='flex flex-col justify-evenly p-4'>
                   <h1 className='text-white text-2xl font-bold'>Useful Documentation to read</h1>
                   <p className='text-white text-sm font-semibold'>BuildX integrates smoothly with all of the frameworks you already know</p>
