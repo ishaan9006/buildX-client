@@ -94,7 +94,7 @@ export default function Home() {
             </div>
             <hr className='m-4'/>
             <div className='mt-5'>
-              <h1 className="text-white text-2xl font-bold">Usage</h1>
+              <h1 className="text-white text-2xl font-bold">Services</h1>
             </div>
           </div>
 
