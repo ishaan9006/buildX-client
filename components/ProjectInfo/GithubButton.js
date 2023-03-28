@@ -15,8 +15,8 @@ function GithubButton({title, text, icon}) {
             <div className="text-white text-sm mx-2 font-semibold hover:text-zinc-500">
                 {text}
             </div>
+        </div> 
 
-        </div>
     )
 }
 
