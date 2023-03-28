@@ -47,7 +47,6 @@ export default function Home() {
                 </div>
 
                 <div className='h-full flex justify-evenly items-center'>
-                  <DocButton title="React" description="Guide to build a simple React app" img="/react-js-icon.svg" tag="https://react.dev/blog/2023/03/16/introducing-react-dev"/>
                   <DocButton title="Next.js" description="BuildX helps you to build with Next.js" img="/next.svg" tag="https://nextjs.org/docs/getting-started"/>
                   <DocButton title="Vue.js" description="Quickstart for Vue.js on BuildX" img="/vue-js-icon.svg" tag="https://vuejs.org/guide/introduction.html"/>
                   <DocButton title="Angular" description="Learn how to use Angular with BuildX" img="/angular-icon.svg" tag="https://angular.io/docs"/>
