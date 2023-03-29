@@ -1,6 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Image from 'next/image';
+import Sidebar from '@/components/Sidebar/sidebar';
+import DocButton from '@/components/DocButton/DocButton';
+import InfoButtons from '@/components/ProjectInfo/InfoButtons';
+
+import { FiCopy } from 'react-icons/fi'
+import { RiAddFill } from 'react-icons/ri'
+import { AiFillGithub, AiOutlineCaretDown } from 'react-icons/ai'
+import { RxDotFilled } from 'react-icons/rx'
+
+
+import GithubButton from '@/components/ProjectInfo/GithubButton';
+import ServiceButton from '@/components/Services/ServicesButton';
+
+import axios from 'axios';
+
+
 
 function HomePage() {
+    axios.post('http://localhost:5000/demo', {
+    name: 'Ishaan',
+    lname: 'Khullar'
+  }).then((res) => {
+    console.log(res['data']);
+  }).catch((err) => {
+    console.log(err);
+  })
+
+
+  const [ projectTitle, setProjectTitle ] = useState("Messenger clone");
+  const [ showDropDownMenu, setDropDownMenu ] = useState(false);
+  const dummyText = [
+    {id: 1, text: 'Project1'},
+    {id: 2, text: 'Project2'},
+    {id: 3, text: 'Project3'},
+    {id: 4, text: 'Project4'},
+    {id: 5, text: 'Project5'},
+    {id: 6, text: 'Project6'},
+    {id: 7, text: 'Project7'},
+    {id: 8, text: 'Project8'},
+  ]
+
     return (
           <main className='h-screen w-screen bg-[#0A1F1C] grid grid-cols-8 overflow-hidden'>
             <div className='col-span-1'>
@@ -26,7 +66,7 @@ function HomePage() {
                     <div className='flex justify-center items-center relative z-50'>
                       <h1 className="text-white text-2xl font-semibold">{projectTitle}</h1>
                       <div className='h-5 w-20 border-2 rounded-full flex justify-center items-center ml-3'>
-                        <p className="text-white text-xs">Base plan</p>
+                        <p className="text-white text-xs cursor-default">Base plan</p>
                       </div>
                     </div>
     
@@ -38,9 +78,13 @@ function HomePage() {
                           <Image src="/web-2.svg" height="24" width="24" alt="Loading.."/>
                         </div>
                     
-                      <div className='h-8 w-25 border-2 rounded-full flex justify-center items-center ml-3 p-1 mt-2'>
+                      <div className='h-8 w-25 border-2 rounded-full
+                        flex justify-center items-center ml-3 p-1 mt-2
+                        transition ease-in-out delay-10 hover:-translate-y-1
+                         duration-100
+                       '>
                         <RiAddFill color='white'/>
-                        <p className="text-white text-xs mx-1">Change plan</p>
+                        <p className="text-white text-xs mx-1 cursor-pointer">Change plan</p>
                       </div>
     
                     </div>
@@ -52,7 +96,7 @@ function HomePage() {
                           {
                             dummyText.map((item) => (
                               <button key={item.id} 
-                                className='text-lg font-bold
+                                className='text-lg font-bold 
                                  flex'
                                  onClick={() => setProjectTitle(item.text)}
                                 >
