@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Login({handleState}) {
+function Login({login, handleState}) {
     return (
         <div className="h-1/2 w-3/5 rounded-2xl bg-white flex flex-col justify-center items-center">
             <h1 className="font-semibold text-sm">Login to continue</h1>
