@@ -18,14 +18,44 @@ import axios from 'axios';
 
 
 function HomePage() {
-    axios.post('http://localhost:5000/demo', {
-    name: 'Ishaan',
-    lname: 'Khullar'
-  }).then((res) => {
-    console.log(res['data']);
-  }).catch((err) => {
-    console.log(err);
-  })
+  // const postUserInfo = () => {
+  //   axios.post('http://localhost:5000/demo', {
+  //   email: 'Ishaan',
+  //   password: 'Khullar',
+    
+  //   }).then((res) => {
+  //     console.log(res['data']);
+  //   }).catch((err) => {
+  //     console.log(err);
+  //   })
+  // }
+
+  // const postProject = () => {
+  //   axios.post('http://localhost:5000/project', {
+  //     name:'abc', 
+  //     apiKey:'1234', 
+  //     region:'us-east-1', 
+  //     github:'ishaan06', 
+  //     plan: 'basic',
+  //     id: '64245e9a35f05cf04f5074d3'
+  //     // id: 
+  //   }).then((res) => {
+  //     console.log(res);
+  //   }).catch((err) => {
+  //     console.log(err);
+  //   })
+  // }
+
+
+
+  // const getData = () => {
+  //   axios.get('http://localhost:5000/user-info').
+  //   then((res) => {
+  //     console.log(res['data']);
+  //   }).catch((err) => {
+  //     console.log(err);
+  //   })
+  // }
 
 
   const [ projectTitle, setProjectTitle ] = useState("Messenger clone");
@@ -78,14 +108,15 @@ function HomePage() {
                           <Image src="/web-2.svg" height="24" width="24" alt="Loading.."/>
                         </div>
                     
-                      <div className='h-8 w-25 border-2 rounded-full
+                      <button className='h-8 w-25 border-2 rounded-full
                         flex justify-center items-center ml-3 p-1 mt-2
                         transition ease-in-out delay-10 hover:-translate-y-1
-                         duration-100
-                       '>
+                        duration-100'
+                        onClick={() => {}}
+                       >
                         <RiAddFill color='white'/>
                         <p className="text-white text-xs mx-1 cursor-pointer">Change plan</p>
-                      </div>
+                      </button>
     
                     </div>
                   </div>
