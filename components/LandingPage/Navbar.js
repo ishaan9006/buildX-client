@@ -5,7 +5,7 @@ import { AiOutlineCaretDown } from 'react-icons/ai'
 
 function Navbar() {
     return (
-        <nav className='h-16 w-screen bg-[#091B18] p-4 flex absolute sticky top-0 z-50'>
+        <nav className='h-16 w-screen bg-[#091B18] p-4 flex sticky top-0 z-50'>
             <div className='flex justify-start items-center w-1/3'>
                 <SiBackendless color='white' size={28} />
                 <h1 className='text-2xl text-white font-bold mx-2'>BuildX</h1>
