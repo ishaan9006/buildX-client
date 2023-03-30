@@ -5,22 +5,25 @@ import React from 'react'
 
 function LandingPage() {
     return (
-        <div className="h-screen w-screen bg-[#0A1F1C] relative z-0">
+        <div className="h-screen w-screen bg-[#0A1F1C] relative z-0 overflow-hidden">
             <Navbar />
 
-            <div className="grid-cols-10">
-                <div className="col-span-7 p-5 flex-col">
-                    <h1 className='text-6xl text-white'>Secure access</h1>
-                    <div className="flex mt-5 items-center">
-                        <h1 className='text-6xl text-white'>for</h1>
-                        <TextBox text="everyone" col="text-[#2e5ad2]"/>
+            <div className="grid-cols-10 ">
+                <div className="col-span-7 h-screen px-5 flex flex-col justify-around">
+                    <div>
+                        <h1 className='text-6xl text-white'>Secure access</h1>
+                        <div className="flex mt-5 items-center">
+                            <h1 className='text-6xl text-white'>for</h1>
+                            <TextBox text="everyone" col="text-[#2e5ad2]"/>
+                        </div>
+                        <div className="flex items-center mt-5">
+                            <h1 className='text-6xl text-white'>But not</h1>
+                            <TextBox text="just anyone" col="text-red-600"/>
+                        </div>
                     </div>
-                    <div className="flex items-center mt-5">
-                        <h1 className='text-6xl text-white'>But not</h1>
-                        <TextBox text="just anyone" col="text-red-600"/>
-                    </div>
-                    
-                    <StartBox />
+                        
+
+                    <StartBox userText="Start building your app now!"/>
 
                 </div>
 
