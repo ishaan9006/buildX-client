@@ -1,4 +1,6 @@
 import Navbar from '@/components/LandingPage/Navbar'
+import StartBox from '@/components/LandingPage/StartBox'
+import TextBox from '@/components/LandingPage/TextBox'
 import React from 'react'
 
 function LandingPage() {
@@ -7,15 +9,19 @@ function LandingPage() {
             <Navbar />
 
             <div className="grid-cols-10">
-                <div className="col-span-7">
-                    <h1>Secure access</h1>
-                    <div className="flex">
-                        <h1>for</h1>
+                <div className="col-span-7 p-5 flex-col">
+                    <h1 className='text-6xl text-white'>Secure access</h1>
+                    <div className="flex mt-5 items-center">
+                        <h1 className='text-6xl text-white'>for</h1>
+                        <TextBox text="everyone" col="text-[#2e5ad2]"/>
                     </div>
-                    <div className="flex">
-                        <h1>But not just anyone</h1>
+                    <div className="flex items-center mt-5">
+                        <h1 className='text-6xl text-white'>But not</h1>
+                        <TextBox text="just anyone" col="text-red-600"/>
                     </div>
                     
+                    <StartBox />
+
                 </div>
 
                 <div className="col-span-3">
