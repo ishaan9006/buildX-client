@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Login({login, handleState}) {
+    const [data, setData] = useState({
+        email: '',
+        password: '',
+    });
+    
+   
     return (
         <div className="h-1/2 w-3/5 rounded-2xl bg-white flex flex-col justify-center items-center">
             <h1 className="font-semibold text-sm">Login to continue</h1>
@@ -14,7 +20,10 @@ function Login({login, handleState}) {
 
             </div>
 
-            <button className="h-10 w-2/3 bg-[#2e5ad2] rounded-lg mt-4">
+            <button
+                className="h-10 w-2/3 bg-[#2e5ad2] rounded-lg mt-4"
+                onClick={() => userLogin()}
+            >
                 <p className='text-white'>Login</p>
             </button>
 
