@@ -7,22 +7,29 @@ function Login({login, handleState}) {
         password: '',
     });
     const handleChange = (e) => {
-        setData({...data, [e.target.value]: [e.target.value]})
+        setData({...data, [e.target.name]: e.target.value})
     }
     const userLogin = () => {
-        axios.post('http://localhost:5000/login',{
-            data
-        }).then((res) => {
-            console.log(res);
-        }).catch((err) => {
+        try{
+            console.log(data);
+            axios.post('http://localhost:5000/login',{
+                data
+            }).then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+        catch(err){
             console.log(err);
-        })
+        }
+
     }
     return (
         <div className="h-1/2 w-3/5 rounded-2xl bg-white flex flex-col justify-center items-center">
             <h1 className="font-semibold text-sm">Login to continue</h1>
-            <input name="email" onChange={handleChange} className="p-1 border-2 rounded-lg mt-2 text-md" placeholder="Email"/>
-            <input name="password" onChange={handleChange}className="p-1 border-2 rounded-lg mt-2 text-md" placeholder="Password"/>
+            <input name="email" value={data.email} onChange={handleChange} className="p-1 border-2 rounded-lg mt-2 text-md" placeholder="Email"/>
+            <input name="password" value={data.password} onChange={handleChange}className="p-1 border-2 rounded-lg mt-2 text-md" placeholder="Password"/>
 
             <div className="flex w-2/3 justify-end items-end mt-1">
                 <button>
