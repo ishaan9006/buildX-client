@@ -11,7 +11,7 @@ function Navbar() {
                 <h1 className='text-2xl text-white font-bold mx-2'>BuildX</h1>
             </div>
 
-            <div className='w-2/3 flex justify-around'>
+            <div className='h-fit w-2/3 flex justify-around'>
                 <div className='flex justify-center items-center'>
                     <h1 className='text-white mx-2 text-md font-semibold'>Product</h1>
                     <AiOutlineCaretDown color='white'/>
@@ -29,7 +29,7 @@ function Navbar() {
                     <AiOutlineCaretDown color='white'/>
                 </div>
 
-                <button className='h-10 w-30 bg-white p-2 rounded-xl border-2 border-zinc-600'>
+                <button className='h-10 w-35 bg-white p-2 px-4 rounded-xl border-2 border-zinc-600'>
                     <p className='font-semibold text-sm'>Sign up</p>
                 </button>
 
