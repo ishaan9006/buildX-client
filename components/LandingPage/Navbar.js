@@ -12,19 +12,19 @@ function Navbar() {
             </div>
 
             <div className='h-fit w-2/3 flex justify-around'>
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-center items-center cursor-pointer'>
                     <h1 className='text-white mx-2 text-md font-semibold'>Product</h1>
                     <AiOutlineCaretDown color='white'/>
                 </div>
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-center items-center cursor-pointer'>
                     <h1 className='text-white mx-2 text-md font-semibold'>Docs & Resources</h1>
                     <AiOutlineCaretDown color='white'/>
                 </div>
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-center items-center cursor-pointer'>
                     <h1 className='text-white mx-2 text-md font-semibold'>Company</h1>
                     <AiOutlineCaretDown color='white'/>
                 </div>
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-center items-center cursor-pointer'>
                     <h1 className='text-white mx-2 text-md font-semibold'>Pricing</h1>
                     <AiOutlineCaretDown color='white'/>
                 </div>
